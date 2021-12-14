@@ -5,7 +5,7 @@ inputs:
     config_path:
         description: "Path to configuration file which contains the articles: [files] relation. Defaults to .github/test_config.yaml"
         required: false
-        default: ".github/workflow.yaml"
+        default: ".github/UpdateDocsPls.yaml"
 outputs:
     found_doc_related_changes:
         description: "If true, it means we found changes related to documentation articles"
