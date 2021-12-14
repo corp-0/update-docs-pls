@@ -83,3 +83,4 @@ class Repo:
     delete_branch_on_merge: bool
     allow_forking: Optional[bool] = True
     is_template: Optional[bool] = False
+    topics: Optional[any] = None
