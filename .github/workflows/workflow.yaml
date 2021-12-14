@@ -15,17 +15,7 @@ jobs:
 
             -   name: DocsReminder
                 id: DocsReminder
-#                uses: corp-0/update-docs-pls@master
-                run: |
-                    apt-get update
-                    apt-get install -y python3-pip
-                    pip install poetry
-                    poetry config virtualenvs.create false
-                    poetry install
-                    python main.py
-                with:
-                    config_path: tests/data/test_config.yaml
-
+                uses: corp-0/update-docs-pls@master
             -   name: Comment PR
                 if: ${{ steps.DocsReminder.outputs.found_doc_related_changes == 1}}
                 uses: thollander/actions-comment-pull-request@v1
