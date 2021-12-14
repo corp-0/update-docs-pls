@@ -5,7 +5,7 @@ on:
             - master
         types:
             - opened
-            - edited
+            - synchronize
 jobs:
     check_docs:
         runs-on: ubuntu-latest
