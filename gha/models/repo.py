@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from .user import User
+from typing import Optional
 
 @dataclass
 class Repo:
@@ -76,7 +77,11 @@ class Repo:
     open_issues: int
     watchers: int
     default_branch: str
-    allow_squash_merge: bool
-    allow_merge_commit: bool
-    allow_rebase_merge: bool
-    delete_branch_on_merge: bool
+    allow_squash_merge: Optional[any] = None
+    allow_merge_commit: Optional[any] = None
+    allow_rebase_merge: Optional[any] = None
+    delete_branch_on_merge: Optional[any] = None
+    allow_forking: Optional[any] = None
+    is_template: Optional[any] = None
+    topics: Optional[any] = None
+    visibility: Optional[any] = None

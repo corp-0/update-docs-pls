@@ -15,8 +15,10 @@ class Action:
 @dataclass
 class PullRequestAction(Action):
     number: int
-    # changes: Optional[dict]
     pull_request: PR
+    changes: Optional[dict] = None
+    before: Optional[dict] = None
+    after: Optional[dict] = None
 
     def get_files(self) -> List[File]:
         return self.pull_request.get_files()
