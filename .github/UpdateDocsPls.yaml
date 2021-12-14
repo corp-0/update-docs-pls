@@ -1,0 +1,9 @@
+entries:
+    -   article_name: "README"
+        article_url: "README.md"
+        files:
+            - "**/*.py"
+    -   article_name: "New file"
+        article_url: "https://my-wiki/new-file"
+        files:
+            - "tests/data/new-file.txt"

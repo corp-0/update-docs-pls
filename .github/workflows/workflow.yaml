@@ -1,0 +1,34 @@
+name: UpdateDocsPls
+on:
+    pull_request:
+        branches:
+            - master
+        types:
+            - opened
+            - edited
+jobs:
+    check_docs:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v2
+
+            -   name: DocsReminder
+                id: DocsReminder
+#                uses: corp-0/update-docs-pls@master
+                run: |
+                    apt-get update
+                    apt-get install -y python3-pip
+                    pip install poetry
+                    poetry config virtualenvs.create false
+                    poetry install
+                    python main.py
+                with:
+                    config_path: tests/data/test_config.yaml
+
+            -   name: Comment PR
+                if: ${{ steps.DocsReminder.outputs.found_doc_related_changes == 1}}
+                uses: thollander/actions-comment-pull-request@v1
+                with:
+                    message: ${{ steps.DocsReminder.outputs.comment_content }}
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

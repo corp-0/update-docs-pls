@@ -1,0 +1,18 @@
+entries:
+    -   article_name: "Context"
+        article_url: "https://my-wiki/context"
+        files:
+            - "pr2changelog/context.py"
+    -   article_name: "Tests"
+        article_url: "https://my-wiki/tests"
+        files:
+            - "tests/**"
+    -   article_name: "Python"
+        article_url: "https://my-wiki/py"
+        files:
+            - "**/*.py"
+    -   article_name: "Not Changed"
+        article_url: "https://my-wiki/not-changed"
+        files:
+            - "**/*.txt"
+            - "main.py"

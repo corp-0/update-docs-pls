@@ -1,0 +1,19 @@
+name: "UpdateDocsPls"
+author: "Andrés Riquelme <andresfranco.rs@gmail.com>"
+description: "Reads the changes in a PR and reminds people to update the docs if a changed file matches a set pair of files and documentation articles."
+inputs:
+    config_path:
+        description: "Path to configuration file which contains the articles: [files] relation. Defaults to .github/test_config.yaml"
+        required: false
+        default: ".github/workflow.yaml"
+outputs:
+    found_doc_related_changes:
+        description: "If true, it means we found changes related to documentation articles"
+    comment_content:
+        description: "Formatted comment to be posted in the PR by another action"
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+branding:
+    icon: 'book-open'
+    color: 'purple'
