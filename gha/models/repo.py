@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from .user import User
+from typing import Optional
 
 @dataclass
 class Repo:
@@ -80,3 +81,4 @@ class Repo:
     allow_merge_commit: bool
     allow_rebase_merge: bool
     delete_branch_on_merge: bool
+    allow_forking: Optional[bool] = True
