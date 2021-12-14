@@ -84,3 +84,4 @@ class Repo:
     allow_forking: Optional[bool] = True
     is_template: Optional[bool] = False
     topics: Optional[any] = None
+    visibility: Optional[any] = None
