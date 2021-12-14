@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 from .user import User
 from .repo import Repo
 from .file import File
@@ -79,6 +79,7 @@ class PR:
     additions: int
     deletions: int
     changed_files: int
+    active_lock_reason: Optional[str] = None
 
     def get_files(self) -> List[File]:
         files = []
