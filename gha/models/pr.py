@@ -80,6 +80,7 @@ class PR:
     deletions: int
     changed_files: int
     active_lock_reason: Optional[str] = None
+    auto_merge: Optional[any] = None
 
     def get_files(self) -> List[File]:
         files = []
