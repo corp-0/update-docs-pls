@@ -17,6 +17,7 @@ class PullRequestAction(Action):
     number: int
     pull_request: PR
     changes: Optional[dict] = None
+    before: Optional[dict] = None
     after: Optional[dict] = None
 
     def get_files(self) -> List[File]:
