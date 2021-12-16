@@ -19,6 +19,7 @@ class PullRequestAction(Action):
     changes: Optional[dict] = None
     before: Optional[dict] = None
     after: Optional[dict] = None
+    organization: Optional[any] = None
 
     def get_files(self) -> List[File]:
         return self.pull_request.get_files()
