@@ -1,0 +1,26 @@
+name: unit tests
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+jobs:
+    perform_test:
+        name: unittest
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v2
+            -   uses: actions/setup-python@v2
+                with:
+                    python-version: '3.9'
+            -   name: install dependencies
+                run: |
+                    pip install poetry
+                    poetry config virtualenvs.create false
+                    poetry install
+            -   name: run tests
+                run: python -m unittest
+                working-directory: tests/
