@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Optional
 
 @dataclass
 class File:
@@ -11,4 +12,4 @@ class File:
     blob_url: str
     raw_url: str
     contents_url: str
-    patch: str
+    patch: Optional[str] = None
