@@ -13,3 +13,4 @@ class File:
     raw_url: str
     contents_url: str
     patch: Optional[str] = None
+    previous_filename: Optional[str] = None
