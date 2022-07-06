@@ -85,3 +85,4 @@ class Repo:
     is_template: Optional[any] = None
     topics: Optional[any] = None
     visibility: Optional[any] = None
+    web_commit_signoff_required: Optional[any] = None
